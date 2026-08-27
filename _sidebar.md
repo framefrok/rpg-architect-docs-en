@@ -1,5 +1,5 @@
-* **Главная**
-  * [О документации](README.md)
+* **Home**
+  * [About](README.md)
   * [Welcome](Welcome/Welcome.md)
 
 * **Guides**
