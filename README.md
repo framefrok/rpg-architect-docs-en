@@ -1,26 +1,22 @@
-\# RPG Architect Documentation
+RPG Architect Documentation
+
+Welcome to the complete documentation for RPG Architect.
 
 
 
-Добро пожаловать в полную документацию по \*\*RPG Architect\*\*.
+Use the left menu to select sections and search, and the right menu for quick navigation within the current article.
 
 
 
-Используйте меню \*\*слева\*\* для выбора разделов и поиска, а меню \*\*справа\*\* — для быстрой навигации по текущей статье.
 
 
+\### Quick start:
 
-\---
+\* \[Getting Started (Getting Started)](Guides/Getting%20Started.md)
 
+\* \[Database (Database)](Database/Characters/Characters.md)
 
+\* \[Commands (Commands)](Commands/Data%20Manipulation/Change%20Switch.md)
 
-\### Быстрый старт:
-
-\* \[Начало работы (Getting Started)](Guides/Getting%20Started.md)
-
-\* \[База данных (Database)](Database/Characters/Characters.md)
-
-\* \[Команды событий (Commands)](Commands/Data%20Manipulation/Change%20Switch.md)
-
-\* \[Книга рецептов (Cookbook)](Cookbook/2D%20Cookbook.md)
+\* \[Cookbook (Cookbook)](Cookbook/2D%20Cookbook.md)
 
