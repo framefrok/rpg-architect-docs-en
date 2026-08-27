@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RPG Architect Documentation</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+
+  <!-- Основная тема Docsify -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+
+  <!-- Стили правого меню навигации (TOC) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-plugin-toc@1.3.1/dist/docsify-plugin-toc.min.css">
+
+  <style>
+    :root {
+      --theme-color: #3b82f6;
+      --toc-width: 240px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+
+    /* Настройки левого меню */
+    .sidebar {
+      padding-top: 15px;
+      border-right: 1px solid #eaecef;
+    }
+    .sidebar > h1 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* Настройки контентной области под 2 сайдбара */
+    .content {
+      padding-right: 20px;
+    }
+
+    /* Стилизация правого меню TOC (On this page) */
+    .page_toc {
+      position: fixed;
+      right: 20px;
+      top: 80px;
+      width: var(--toc-width);
+      max-height: calc(100vh - 100px);
+      overflow-y: auto;
+      border-left: 2px solid #f1f5f9;
+      padding-left: 12px;
+      background: transparent;
+      z-index: 10;
+    }
+    .page_toc div[class*="title"] {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #64748b;
+      margin-bottom: 8px;
+    }
+    .page_toc a {
+      font-size: 13px;
+      color: #475569;
+      text-decoration: none;
+      transition: color 0.15s ease;
+      display: block;
+      padding: 3px 0;
+      line-height: 1.4;
+    }
+    .page_toc a:hover, .page_toc a.active {
+      color: var(--theme-color);
+      font-weight: 600;
+    }
+
+    /* Адаптивные изображения и скругления */
+    .markdown-section {
+      max-width: 860px;
+      margin-right: 260px; /* Отступ под правый TOC */
+    }
+    @media screen and (max-width: 1200px) {
+      .markdown-section { margin-right: 0; }
+      .page_toc { display: none; }
+    }
+    .markdown-section img {
+      border-radius: 8px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+      margin: 16px 0;
+      max-width: 100%;
+    }
+    .markdown-section pre>code {
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">Загрузка документации...</div>
+
+  <script>
+    window.$docsify = {
+      name: 'RPG Architect Docs',
+      repo: '',
+      auto2top: true,
+      loadSidebar: true,
+      homepage: 'Welcome/Welcome.md',
+
+      // Настройка правой навигации по статье (TOC)
+      toc: {
+        scope: '.markdown-section',
+        headings: 'h2, h3, h4',
+        title: 'На этой странице',
+      },
+
+      // Полнотекстовый поиск
+      search: {
+        maxAge: 86400000,
+        paths: 'auto',
+        placeholder: 'Поиск...',
+        noData: 'Ничего не найдено',
+        depth: 4
+      },
+
+      // Копирование сниппетов кода
+      copyCode: {
+        buttonText: 'Копировать',
+        errorText: 'Ошибка',
+        successText: 'Скопировано'
+      }
+    }
+  </script>
+
+  <!-- Docsify Core -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+
+  <!-- Правая навигация (Page TOC Plugin) -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify-plugin-toc@1.3.1/dist/docsify-plugin-toc.min.js"></script>
+
+  <!-- Плагины -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+
+  <!-- Подсветка кода -->
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-csharp.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-javascript.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-yaml.min.js"></script>
+</body>
+</html>
