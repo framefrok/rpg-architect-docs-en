@@ -1,471 +1,203 @@
-* **Welcome**
-  * [Welcome](Welcome/Welcome.md)
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>RPG Architect Documentation</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
-* **Guides**
-  * [Getting Started](Guides/Getting%20Started.md)
-  * [Frequently Asked Questions](Guides/Frequently%20Asked%20Questions.md)
-  * [Reporting Bugs](Guides/Reporting%20Bugs.md)
-  * [Troubleshooting](Guides/Troubleshooting.md)
-  * [Tutorials](Guides/Tutorials.md)
+  <!-- Тема Docsify -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <!-- Сворачивание папок слева -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" />
 
-* **Cookbook**
-  * [Changing Tile Size](Cookbook/Changing%20Tile%20Size.md)
-  * [Sprite and Model Priority](Cookbook/Sprite%20and%20Model%20Priority.md)
-  * [AI Assisted Development](Cookbook/AI%20Assisted%20Development.md)
-  * [2D Cookbook](Cookbook/2D%20Cookbook.md)
-  * [Layer Rendering](Cookbook/Layer%20Rendering.md)
-  * [Pixel Perfect Rendering](Cookbook/Pixel%20Perfect%20Rendering.md)
-  * [3D Cookbook](Cookbook/3D%20Cookbook.md)
-  * [Modeling Best Practices](Cookbook/Modeling%20Best%20Practices.md)
+  <style>
+    :root {
+      --theme-color: #2563eb;
+      --sidebar-width: 300px;
+      --toc-width: 240px;
+    }
 
-* **Editor**
-  * [Collider Editor](Editor/Collider%20Editor.md)
-  * [Database](Editor/Database.md)
-  * [Easing Function Editor](Editor/Easing%20Function%20Editor.md)
-  * [Editor Settings](Editor/Editor%20Settings.md)
-  * [Effect Table Editor](Editor/Effect%20Table%20Editor.md)
-  * [Graphics Post Processor Editor](Editor/Graphics%20Post%20Processor%20Editor.md)
-  * [Map Editor](Editor/Map%20Editor.md)
-  * [Entity Reference](Editor/Entity%20Reference.md)
-  * [Menus](Editor/Menus.md)
-  * [Party Editor](Editor/Party%20Editor.md)
-  * [Script Editor](Editor/Script%20Editor.md)
-  * [Sprite Rigging Editor](Editor/Sprite%20Rigging%20Editor.md)
-  * [Statistics Table Editor](Editor/Statistics%20Table%20Editor.md)
-  * [Switch Definitions](Editor/Switch%20Definitions.md)
-  * [Tag Editor](Editor/Tag%20Editor.md)
-  * [Trait Table Editor](Editor/Trait%20Table%20Editor.md)
-  * [Transition Editor](Editor/Transition%20Editor.md)
-  * [Variable Definitions](Editor/Variable%20Definitions.md)
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #1e293b;
+    }
 
-* **Reference**
-  * [3D Model](Reference/3D%20Model.md)
-  * [Actor Reference](Reference/Actor%20Reference.md)
-  * [Annotations](Reference/Annotations.md)
-  * [Annotation Effects](Reference/Annotation%20Effects.md)
-  * [Array](Reference/Array.md)
-  * [Audio](Reference/Audio.md)
-  * [Collider](Reference/Collider.md)
-  * [Conditions](Reference/Conditions.md)
-  * [Context](Reference/Context.md)
-  * [Direction](Reference/Direction.md)
-  * [Easing Function](Reference/Easing%20Function.md)
-  * [Entity](Reference/Entity.md)
-  * [Filter](Reference/Filter.md)
-  * [Font](Reference/Font.md)
-  * [Formulas](Reference/Formulas.md)
-  * [Graphics Post Processors](Reference/Graphics%20Post%20Processors.md)
-  * [Image](Reference/Image.md)
-  * [Interaction](Reference/Interaction.md)
-  * [Light](Reference/Light.md)
-  * [Local and Global Data](Reference/Local%20and%20Global%20Data.md)
-  * [Map](Reference/Map.md)
-  * [Movement Elements](Reference/Movement%20Elements.md)
-  * [Music](Reference/Music.md)
-  * [Physics Object Reference](Reference/Physics%20Object%20Reference.md)
-  * [Projection Elements](Reference/Projection%20Elements.md)
-  * [Projection Element Modifiers](Reference/Projection%20Element%20Modifiers.md)
-  * [Reference Switch or Variable](Reference/Reference%20Switch%20or%20Variable.md)
-  * [Scene](Reference/Scene.md)
-  * [Scene Transitions](Reference/Scene%20Transitions.md)
-  * [Script](Reference/Script.md)
-  * [Sound Effect](Reference/Sound%20Effect.md)
-  * [Sprite Format](Reference/Sprite%20Format.md)
-  * [Sprite or Model](Reference/Sprite%20or%20Model.md)
-  * [Sprite Rig](Reference/Sprite%20Rig.md)
-  * [Statistics Table](Reference/Statistics%20Table.md)
-  * [Switch](Reference/Switch.md)
-  * [Switch or Value](Reference/Switch%20or%20Value.md)
-  * [Tag Context Providers](Reference/Tag%20Context%20Providers.md)
-  * [Tags](Reference/Tags.md)
-  * [Text Escape Codes](Reference/Text%20Escape%20Codes.md)
-  * [Tileset Format](Reference/Tileset%20Format.md)
-  * [Trait Effect Table](Reference/Trait%20Effect%20Table.md)
-  * [Trait Table](Reference/Trait%20Table.md)
-  * [Unique ID](Reference/Unique%20ID.md)
-  * [Variable](Reference/Variable.md)
-  * [Variable Manipulators](Reference/Variable%20Manipulators.md)
-  * [Variable or Value](Reference/Variable%20or%20Value.md)
-  * [Video](Reference/Video.md)
+    /* Левый сайдбар */
+    .sidebar {
+      width: var(--sidebar-width);
+      padding-top: 15px;
+      border-right: 1px solid #e2e8f0;
+      background: #f8fafc;
+    }
+    .sidebar .app-name-link {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .sidebar ul li a {
+      font-size: 13.5px;
+      color: #475569;
+    }
+    .sidebar ul li.active > a {
+      color: var(--theme-color);
+      font-weight: 600;
+      border-right: 2px solid var(--theme-color);
+    }
+    .sidebar ul li strong {
+      font-size: 12px;
+      text-transform: uppercase;
+      color: #94a3b8;
+      letter-spacing: 0.05em;
+    }
 
-* **Database**
-  * **Characters**
-    * [Characters](Database/Characters/Characters.md)
-    * [Classes](Database/Characters/Classes.md)
-    * [Character Animations](Database/Characters/Character%20Animations.md)
-    * [Portrait Expressions](Database/Characters/Portrait%20Expressions.md)
-    * [Sprite Layers](Database/Characters/Sprite%20Layers.md)
-  * **Skills**
-    * [Skill Settings](Database/Skills/Skill%20Settings.md)
-    * [Skills](Database/Skills/Skills.md)
-    * [Skill Types](Database/Skills/Skill%20Types.md)
-  * **Items**
-    * [Configuration](Database/Items/Configuration.md)
-    * [Items](Database/Items/Items.md)
-    * [Equipment](Database/Items/Equipment.md)
-    * [Loot Tables](Database/Items/Loot%20Tables.md)
-    * [Equipment Slots](Database/Items/Equipment%20Slots.md)
-    * [Item Types](Database/Items/Item%20Types.md)
-  * **Maps**
-    * [Configuration](Database/Maps/Configuration.md)
-    * [Tilesets](Database/Maps/Tilesets.md)
-    * [Tile Tags](Database/Maps/Tile%20Tags.md)
-    * [Doodads](Database/Maps/Doodads.md)
-    * [Entity Definitions](Database/Maps/Entity%20Definitions.md)
-    * [Vehicles](Database/Maps/Vehicles.md)
-    * [Weather](Database/Maps/Weather.md)
-    * [Projections](Database/Maps/Projections.md)
-    * [Prefabs](Database/Maps/Prefabs.md)
-  * **Data Entries**
-    * [Data Entries](Database/Data%20Entries/Data%20Entries.md)
-    * [Data Entry Types](Database/Data%20Entries/Data%20Entry%20Types.md)
-  * **Statistics**
-    * [Statistics](Database/Statistics/Statistics.md)
-    * [Elementals](Database/Statistics/Elementals.md)
-    * [Status Effects](Database/Statistics/Status%20Effects.md)
-  * **Enemies**
-    * [Enemies](Database/Enemies/Enemies.md)
-    * [Enemy Formations](Database/Enemies/Enemy%20Formations.md)
-  * **Battles**
-    * [Configuration](Database/Battles/Configuration.md)
-    * [Battle Backdrops](Database/Battles/Battle%20Backdrops.md)
-    * [Action Sequences](Database/Battles/Action%20Sequences.md)
-    * [Battle Poses](Database/Battles/Battle%20Poses.md)
-  * **Animations**
-    * [Animations](Database/Animations/Animations.md)
-  * **User Interfaces**
-    * [User Interfaces](Database/User%20Interfaces/User%20Interfaces.md)
-    * [Font Families](Database/User%20Interfaces/Font%20Families.md)
-  * **System**
-    * [Video Configuration](Database/System/Video%20Configuration.md)
-    * [Audio Configuration](Database/System/Audio%20Configuration.md)
-    * [General](Database/System/General.md)
-    * [Localizations](Database/System/Localizations.md)
-    * [Title](Database/System/Title.md)
-    * [New Game](Database/System/New%20Game.md)
-    * [Game Over](Database/System/Game%20Over.md)
-    * [Virtual Keys](Database/System/Virtual%20Keys.md)
-    * [Controllers](Database/System/Controllers.md)
-  * **Global Scripts**
-    * [Functions](Database/Global%20Scripts/Functions.md)
-    * [Database - Characters](Database/Global%20Scripts/Database%20-%20Characters.md)
-    * [Database - Data Entries](Database/Global%20Scripts/Database%20-%20Data%20Entries.md)
-    * [Database - Equipment](Database/Global%20Scripts/Database%20-%20Equipment.md)
-    * [Database - Items](Database/Global%20Scripts/Database%20-%20Items.md)
-    * [Database - Status Effects](Database/Global%20Scripts/Database%20-%20Status%20Effects.md)
+    /* Центральная статья */
+    .content {
+      padding-left: calc(var(--sidebar-width) + 20px);
+    }
+    .markdown-section {
+      max-width: 840px;
+      padding: 30px 40px 60px 20px;
+      margin-right: calc(var(--toc-width) + 30px);
+    }
 
-* **Commands**
-  * **Data Manipulation**
-    * [Change Switch](Commands/Data%20Manipulation/Change%20Switch.md)
-    * [Change Variable](Commands/Data%20Manipulation/Change%20Variable.md)
-    * [Array Operations](Commands/Data%20Manipulation/Array%20Operations.md)
-    * [Save Unique ID](Commands/Data%20Manipulation/Save%20Unique%20ID.md)
-    * [Save Value](Commands/Data%20Manipulation/Save%20Value.md)
-    * [Variable Manipulation](Commands/Data%20Manipulation/Variable%20Manipulation.md)
-    * [Modify Tags](Commands/Data%20Manipulation/Modify%20Tags.md)
-    * [Change Name](Commands/Data%20Manipulation/Change%20Name.md)
-    * [Evaluate Formula](Commands/Data%20Manipulation/Evaluate%20Formula.md)
-  * **Save State Management**
-    * [Load State](Commands/Save%20State%20Management/Load%20State.md)
-    * [Save State](Commands/Save%20State%20Management/Save%20State.md)
-    * [Delete State](Commands/Save%20State%20Management/Delete%20State.md)
-  * **Audio**
-    * [Play Sound Effect](Commands/Audio/Play%20Sound%20Effect.md)
-    * [Play Music](Commands/Audio/Play%20Music.md)
-    * [Toggle Music](Commands/Audio/Toggle%20Music.md)
-    * [Stop Music](Commands/Audio/Stop%20Music.md)
-    * [Play Background Effect](Commands/Audio/Play%20Background%20Effect.md)
-    * [Stop Background Effect](Commands/Audio/Stop%20Background%20Effect.md)
-    * [Adjust Background Effect](Commands/Audio/Adjust%20Background%20Effect.md)
-    * [Set Master Volume](Commands/Audio/Set%20Master%20Volume.md)
-  * **Message**
-    * [Display Static Message](Commands/Message/Display%20Static%20Message.md)
-    * [Display Dynamic Message](Commands/Message/Display%20Dynamic%20Message.md)
-    * [Dismiss Message](Commands/Message/Dismiss%20Message.md)
-    * [Display Dialogue Options](Commands/Message/Display%20Dialogue%20Options.md)
-    * [Display All Messages](Commands/Message/Display%20All%20Messages.md)
-  * **Inventory**
-    * [Change Inventory](Commands/Inventory/Change%20Inventory.md)
-    * [Clear Inventory](Commands/Inventory/Clear%20Inventory.md)
-    * [Call Loot Table](Commands/Inventory/Call%20Loot%20Table.md)
-    * [Change Money](Commands/Inventory/Change%20Money.md)
-    * [Clone Item](Commands/Inventory/Clone%20Item.md)
-    * [Destroy Item](Commands/Inventory/Destroy%20Item.md)
-    * [Get Item Quantity](Commands/Inventory/Get%20Item%20Quantity.md)
-    * [Use Inventory Item](Commands/Inventory/Use%20Inventory%20Item.md)
-    * [Equip Hero](Commands/Inventory/Equip%20Hero.md)
-    * [Unequip Hero](Commands/Inventory/Unequip%20Hero.md)
-  * **Character**
-    * [Change Statistic](Commands/Character/Change%20Statistic.md)
-    * [Change Status Effect](Commands/Character/Change%20Status%20Effect.md)
-    * [Restore Character](Commands/Character/Restore%20Character.md)
-    * [Change Class](Commands/Character/Change%20Class.md)
-  * **Skill**
-    * [Change Skill](Commands/Skill/Change%20Skill.md)
-    * [Use Skill](Commands/Skill/Use%20Skill.md)
-  * **Party**
-    * [Add Character](Commands/Party/Add%20Character.md)
-    * [Remove Character](Commands/Party/Remove%20Character.md)
-    * [Change Party Member](Commands/Party/Change%20Party%20Member.md)
-    * [Swap Party Member](Commands/Party/Swap%20Party%20Member.md)
-    * [Restore Party](Commands/Party/Restore%20Party.md)
-  * **Animation**
-    * [Play Animation](Commands/Animation/Play%20Animation.md)
-    * [Stop Animation](Commands/Animation/Stop%20Animation.md)
-    * [Add Annotations](Commands/Animation/Add%20Annotations.md)
-    * [Remove Annotations](Commands/Animation/Remove%20Annotations.md)
-    * [Set Character Animation](Commands/Animation/Set%20Character%20Animation.md)
-    * [Set Battle Pose](Commands/Animation/Set%20Battle%20Pose.md)
-    * [Set Portrait Expression](Commands/Animation/Set%20Portrait%20Expression.md)
-    * [Rotate Object](Commands/Animation/Rotate%20Object.md)
-    * [Flash Screen](Commands/Animation/Flash%20Screen.md)
-    * [Shake Screen](Commands/Animation/Shake%20Screen.md)
-    * [Tint Screen](Commands/Animation/Tint%20Screen.md)
-    * [Show Screen](Commands/Animation/Show%20Screen.md)
-    * [Hide Screen](Commands/Animation/Hide%20Screen.md)
-    * [Add Graphics Post-Processor](Commands/Animation/Add%20Graphics%20Post-Processor.md)
-    * [Remove Graphics Post-Processor](Commands/Animation/Remove%20Graphics%20Post-Processor.md)
-    * [Clear Graphics Post-Processors](Commands/Animation/Clear%20Graphics%20Post-Processors.md)
-    * [Set Graphics Post-Processor Parameter](Commands/Animation/Set%20Graphics%20Post-Processor%20Parameter.md)
-  * **Physics**
-    * [Apply Velocity](Commands/Physics/Apply%20Velocity.md)
-    * [Alter Physics Properties](Commands/Physics/Alter%20Physics%20Properties.md)
-    * [Alter Collider](Commands/Physics/Alter%20Collider.md)
-    * [Alter Gravity](Commands/Physics/Alter%20Gravity.md)
-    * [Raycast](Commands/Physics/Raycast.md)
-  * **Map**
-    * [Teleport](Commands/Map/Teleport.md)
-    * [Reset Map](Commands/Map/Reset%20Map.md)
-    * [Get Tile Information](Commands/Map/Get%20Tile%20Information.md)
-    * [Change Movement Type](Commands/Map/Change%20Movement%20Type.md)
-    * [Change Tileset Image](Commands/Map/Change%20Tileset%20Image.md)
-    * [Adjust Camera](Commands/Map/Adjust%20Camera.md)
-    * [Adjust Lighting](Commands/Map/Adjust%20Lighting.md)
-    * [Adjust Light](Commands/Map/Adjust%20Light.md)
-    * [Set Camera Type](Commands/Map/Set%20Camera%20Type.md)
-    * [Set Camera Target](Commands/Map/Set%20Camera%20Target.md)
-    * [Adjust Fog](Commands/Map/Adjust%20Fog.md)
-    * [Add Weather](Commands/Map/Add%20Weather.md)
-    * [Change Weather](Commands/Map/Change%20Weather.md)
-    * [Delete Weather](Commands/Map/Delete%20Weather.md)
-    * [Clear Weather](Commands/Map/Clear%20Weather.md)
-    * [Change Wind](Commands/Map/Change%20Wind.md)
-    * [Adjust Map Layer](Commands/Map/Adjust%20Map%20Layer.md)
-  * **Entity and Vehicle**
-    * [Spawn Entity](Commands/Entity%20and%20Vehicle/Spawn%20Entity.md)
-    * [Remove Entity](Commands/Entity%20and%20Vehicle/Remove%20Entity.md)
-    * [Move Entity](Commands/Entity%20and%20Vehicle/Move%20Entity.md)
-    * [Spawn Vehicle](Commands/Entity%20and%20Vehicle/Spawn%20Vehicle.md)
-    * [Remove Vehicle](Commands/Entity%20and%20Vehicle/Remove%20Vehicle.md)
-    * [Enter Vehicle](Commands/Entity%20and%20Vehicle/Enter%20Vehicle.md)
-    * [Exit Vehicle](Commands/Entity%20and%20Vehicle/Exit%20Vehicle.md)
-    * [Stop Entity](Commands/Entity%20and%20Vehicle/Stop%20Entity.md)
-    * [Change Character Model](Commands/Entity%20and%20Vehicle/Change%20Character%20Model.md)
-    * [Cancel Vehicle Exit](Commands/Entity%20and%20Vehicle/Cancel%20Vehicle%20Exit.md)
-    * [Change Portrait Model](Commands/Entity%20and%20Vehicle/Change%20Portrait%20Model.md)
-    * [Change Battle Model](Commands/Entity%20and%20Vehicle/Change%20Battle%20Model.md)
-    * [Jump](Commands/Entity%20and%20Vehicle/Jump.md)
-    * [Access Entity Local Variable](Commands/Entity%20and%20Vehicle/Access%20Entity%20Local%20Variable.md)
-    * [Access Entity Local Switch](Commands/Entity%20and%20Vehicle/Access%20Entity%20Local%20Switch.md)
-    * [Save Entity Unique ID](Commands/Entity%20and%20Vehicle/Save%20Entity%20Unique%20ID.md)
-  * **Projection**
-    * [Spawn Projection](Commands/Projection/Spawn%20Projection.md)
-    * [Remove Projection](Commands/Projection/Remove%20Projection.md)
-  * **Battle**
-    * [Start Battle](Commands/Battle/Start%20Battle.md)
-    * [Schedule Battle Command](Commands/Battle/Schedule%20Battle%20Command.md)
-    * [Show Battle Command Targets](Commands/Battle/Show%20Battle%20Command%20Targets.md)
-    * [Clear Battle Command Targets](Commands/Battle/Clear%20Battle%20Command%20Targets.md)
-    * [Alter Battle Command](Commands/Battle/Alter%20Battle%20Command.md)
-    * [End Battle](Commands/Battle/End%20Battle.md)
-    * [Change Battler Position](Commands/Battle/Change%20Battler%20Position.md)
-    * [Add Battle Log](Commands/Battle/Add%20Battle%20Log.md)
-    * [Clear Battle Log](Commands/Battle/Clear%20Battle%20Log.md)
-    * [Change Battle Speed](Commands/Battle/Change%20Battle%20Speed.md)
-    * [Pause Battle](Commands/Battle/Pause%20Battle.md)
-    * [Set Encounter Steps](Commands/Battle/Set%20Encounter%20Steps.md)
-    * [Change Battle Counter](Commands/Battle/Change%20Battle%20Counter.md)
-    * [Set Scheduling Battler](Commands/Battle/Set%20Scheduling%20Battler.md)
-  * **Control Flow**
-    * [Conditional (If/Then/Else)](Commands/Control%20Flow/Conditional%20(If_Then_Else).md)
-    * [Switch Conditional](Commands/Control%20Flow/Switch%20Conditional.md)
-    * [Wait](Commands/Control%20Flow/Wait.md)
-    * [Toggle Controls](Commands/Control%20Flow/Toggle%20Controls.md)
-    * [Fixed Loop](Commands/Control%20Flow/Fixed%20Loop.md)
-    * [Comment](Commands/Control%20Flow/Comment.md)
-    * [Conditional Loop](Commands/Control%20Flow/Conditional%20Loop.md)
-    * [Break](Commands/Control%20Flow/Break.md)
-    * [Exit Script](Commands/Control%20Flow/Exit%20Script.md)
-    * [Code Block](Commands/Control%20Flow/Code%20Block.md)
-  * **Main Menu**
-    * [Toggle Main Menu Lock](Commands/Main%20Menu/Toggle%20Main%20Menu%20Lock.md)
-    * [Open Main Menu](Commands/Main%20Menu/Open%20Main%20Menu.md)
-    * [Change Main Menu](Commands/Main%20Menu/Change%20Main%20Menu.md)
-  * **Picture**
-    * [Show Picture](Commands/Picture/Show%20Picture.md)
-    * [Change Picture](Commands/Picture/Change%20Picture.md)
-    * [Hide Picture](Commands/Picture/Hide%20Picture.md)
-    * [Clear Pictures](Commands/Picture/Clear%20Pictures.md)
-  * **Video**
-    * [Play Video](Commands/Video/Play%20Video.md)
-    * [Change Video](Commands/Video/Change%20Video.md)
-    * [Pause Video](Commands/Video/Pause%20Video.md)
-    * [Resume Video](Commands/Video/Resume%20Video.md)
-    * [Stop Video](Commands/Video/Stop%20Video.md)
-  * **User Interface**
-    * [Open Menu](Commands/User%20Interface/Open%20Menu.md)
-    * [Close Menu](Commands/User%20Interface/Close%20Menu.md)
-    * [Open Overlay](Commands/User%20Interface/Open%20Overlay.md)
-    * [Open Text Entry](Commands/User%20Interface/Open%20Text%20Entry.md)
-    * [Refresh Overlay](Commands/User%20Interface/Refresh%20Overlay.md)
-    * [Push Focus](Commands/User%20Interface/Push%20Focus.md)
-    * [Save Context Unique ID](Commands/User%20Interface/Save%20Context%20Unique%20ID.md)
-    * [Set User Interface Element Context](Commands/User%20Interface/Set%20User%20Interface%20Element%20Context.md)
-    * [Refresh User Interface Element Context](Commands/User%20Interface/Refresh%20User%20Interface%20Element%20Context.md)
-    * [Reset User Interface Element Selection](Commands/User%20Interface/Reset%20User%20Interface%20Element%20Selection.md)
-    * [Pop Focus](Commands/User%20Interface/Pop%20Focus.md)
-    * [Toggle User Interface Element Visibility](Commands/User%20Interface/Toggle%20User%20Interface%20Element%20Visibility.md)
-    * [Get Selected Item Index](Commands/User%20Interface/Get%20Selected%20Item%20Index.md)
-    * [Open Minimap](Commands/User%20Interface/Open%20Minimap.md)
-    * [Close Minimap](Commands/User%20Interface/Close%20Minimap.md)
-    * [Set Selected Item Index](Commands/User%20Interface/Set%20Selected%20Item%20Index.md)
-    * [Toggle Minimap](Commands/User%20Interface/Toggle%20Minimap.md)
-    * [Set Minimap Level](Commands/User%20Interface/Set%20Minimap%20Level.md)
-    * [Set Minimap Zoom](Commands/User%20Interface/Set%20Minimap%20Zoom.md)
-    * [Pan Minimap](Commands/User%20Interface/Pan%20Minimap.md)
-    * [Close User Interface](Commands/User%20Interface/Close%20User%20Interface.md)
-  * **System**
-    * [Run Global Script](Commands/System/Run%20Global%20Script.md)
-    * [Call Function](Commands/System/Call%20Function.md)
-    * [Change Game Speed](Commands/System/Change%20Game%20Speed.md)
-    * [Change Text Speed](Commands/System/Change%20Text%20Speed.md)
-    * [Change Background Color](Commands/System/Change%20Background%20Color.md)
-    * [Change Mouse](Commands/System/Change%20Mouse.md)
-    * [Run JSON Command](Commands/System/Run%20JSON%20Command.md)
-    * [Launch Url](Commands/System/Launch%20Url.md)
-    * [Change Graphics](Commands/System/Change%20Graphics.md)
-    * [Set Localization](Commands/System/Set%20Localization.md)
-  * **Shop**
-    * [Open Shop](Commands/Shop/Open%20Shop.md)
-    * [Adjust Shop Item Quantity](Commands/Shop/Adjust%20Shop%20Item%20Quantity.md)
-    * [Buy Shop Item](Commands/Shop/Buy%20Shop%20Item.md)
-    * [Sell To Shop](Commands/Shop/Sell%20To%20Shop.md)
-  * **Scene**
-    * [Title](Commands/Scene/Title.md)
-    * [New Game](Commands/Scene/New%20Game.md)
-    * [Reset Game](Commands/Scene/Reset%20Game.md)
-    * [Game Over](Commands/Scene/Game%20Over.md)
-    * [Exit](Commands/Scene/Exit.md)
-    * [Battle Command](Commands/Scene/Battle%20Command.md)
+    /* Правое оглавление статьи (TOC) */
+    #right-toc {
+      position: fixed;
+      top: 70px;
+      right: 20px;
+      width: var(--toc-width);
+      max-height: calc(100vh - 100px);
+      overflow-y: auto;
+      padding-left: 14px;
+      border-left: 2px solid #e2e8f0;
+      z-index: 100;
+    }
+    #right-toc .toc-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #64748b;
+      letter-spacing: 0.06em;
+      margin-bottom: 8px;
+    }
+    #right-toc ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    #right-toc li {
+      margin: 4px 0;
+    }
+    #right-toc li.toc-h3 {
+      padding-left: 12px;
+    }
+    #right-toc li.toc-h4 {
+      padding-left: 22px;
+    }
+    #right-toc a {
+      font-size: 12.5px;
+      color: #64748b;
+      text-decoration: none;
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    #right-toc a:hover, #right-toc a.active {
+      color: var(--theme-color);
+      font-weight: 600;
+    }
 
-* **Data Sources**
-  * [Background Effect](Data%20Sources/Background%20Effect.md)
-  * [Battle Action](Data%20Sources/Battle%20Action.md)
-  * [Battle Manager](Data%20Sources/Battle%20Manager.md)
-  * [Battle Summary](Data%20Sources/Battle%20Summary.md)
-  * [Battler](Data%20Sources/Battler.md)
-  * [Camera](Data%20Sources/Camera.md)
-  * [Class](Data%20Sources/Class.md)
-  * [Data Entries](Data%20Sources/Data%20Entries.md)
-  * [Data Management](Data%20Sources/Data%20Management.md)
-  * [Equipment](Data%20Sources/Equipment.md)
-  * [Equipment Slot](Data%20Sources/Equipment%20Slot.md)
-  * [Game](Data%20Sources/Game.md)
-  * [Game Statistics](Data%20Sources/Game%20Statistics.md)
-  * [Graphics and Video](Data%20Sources/Graphics%20and%20Video.md)
-  * [Graphics Post-Processor](Data%20Sources/Graphics%20Post-Processor.md)
-  * [Hero](Data%20Sources/Hero.md)
-  * [Hero Battle Summary](Data%20Sources/Hero%20Battle%20Summary.md)
-  * [Input](Data%20Sources/Input.md)
-  * [Inventory Slot](Data%20Sources/Inventory%20Slot.md)
-  * [Item](Data%20Sources/Item.md)
-  * [Map](Data%20Sources/Map.md)
-  * [Music](Data%20Sources/Music.md)
-  * [Party](Data%20Sources/Party.md)
-  * [Physics Object](Data%20Sources/Physics%20Object.md)
-  * [Projection](Data%20Sources/Projection.md)
-  * [RPG Save State](Data%20Sources/RPG%20Save%20State.md)
-  * [Scene](Data%20Sources/Scene.md)
-  * [Shop](Data%20Sources/Shop.md)
-  * [Shop Category](Data%20Sources/Shop%20Category.md)
-  * [Shop Item](Data%20Sources/Shop%20Item.md)
-  * [Shop Item Cost](Data%20Sources/Shop%20Item%20Cost.md)
-  * [Shop Sell Item](Data%20Sources/Shop%20Sell%20Item.md)
-  * [Skill](Data%20Sources/Skill.md)
-  * [User Interface](Data%20Sources/User%20Interface.md)
+    @media screen and (max-width: 1200px) {
+      .markdown-section { margin-right: 0; max-width: 100%; }
+      #right-toc { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div id="app">Загрузка...</div>
 
-* **Animations**
-  * **Elements**
-    * [Effect Frame](Animations/Elements/Effect%20Frame.md)
-    * [Graphic Frame](Animations/Elements/Graphic%20Frame.md)
-    * [Particle Emitter](Animations/Elements/Particle%20Emitter.md)
-    * [Shake](Animations/Elements/Shake.md)
-    * [Sound Effect](Animations/Elements/Sound%20Effect.md)
-    * [Target Effect](Animations/Elements/Target%20Effect.md)
-  * **Particle Effects**
-    * [Animation](Animations/Particle%20Effects/Animation.md)
+  <!-- Контейнер для правого TOC -->
+  <div id="right-toc">
+    <div class="toc-title">На этой странице</div>
+    <ul id="right-toc-list"></ul>
+  </div>
 
-* **User Interfaces**
-  * [User Interface Contexts](User%20Interfaces/User%20Interface%20Contexts.md)
-  * **User Interface Elements**
-    * [Compass List](User%20Interfaces/User%20Interface%20Elements/Compass%20List.md)
-    * [Folder](User%20Interfaces/User%20Interface%20Elements/Folder.md)
-    * [Gauge](User%20Interfaces/User%20Interface%20Elements/Gauge.md)
-    * [List](User%20Interfaces/User%20Interface%20Elements/List.md)
-    * [Pane](User%20Interfaces/User%20Interface%20Elements/Pane.md)
-    * [Picture](User%20Interfaces/User%20Interface%20Elements/Picture.md)
-    * [Slider](User%20Interfaces/User%20Interface%20Elements/Slider.md)
-    * [Templated List](User%20Interfaces/User%20Interface%20Elements/Templated%20List.md)
-    * [Text](User%20Interfaces/User%20Interface%20Elements/Text.md)
-  * [User Interface Element Effect](User%20Interfaces/User%20Interface%20Element%20Effect.md)
-  * [User Interface Transitions](User%20Interfaces/User%20Interface%20Transitions.md)
-  * **User Interface Types**
-    * [Dialogue](User%20Interfaces/User%20Interface%20Types/Dialogue.md)
-    * [Menu](User%20Interfaces/User%20Interface%20Types/Menu.md)
-    * [Message Box](User%20Interfaces/User%20Interface%20Types/Message%20Box.md)
-    * [Minimap](User%20Interfaces/User%20Interface%20Types/Minimap.md)
-    * [Overlay](User%20Interfaces/User%20Interface%20Types/Overlay.md)
-    * [Shop](User%20Interfaces/User%20Interface%20Types/Shop.md)
-    * [Text Entry](User%20Interfaces/User%20Interface%20Types/Text%20Entry.md)
+  <script>
+    window.$docsify = {
+      name: 'RPG Architect Docs',
+      auto2top: true,
+      loadSidebar: true,
+      subMaxLevel: 0,
+      homepage: 'README.md',
+      sidebarDisplayLevel: 1,
 
-* **Battles**
-  * **Action Sequences**
-    * **Elements**
-      * [Absolute Movement](Battles/Action%20Sequences/Elements/Absolute%20Movement.md)
-      * [Battle Log](Battles/Action%20Sequences/Elements/Battle%20Log.md)
-      * [Battle Pose](Battles/Action%20Sequences/Elements/Battle%20Pose.md)
-      * [Clear Battle Log](Battles/Action%20Sequences/Elements/Clear%20Battle%20Log.md)
-      * [Color Flash](Battles/Action%20Sequences/Elements/Color%20Flash.md)
-      * [Color Mask](Battles/Action%20Sequences/Elements/Color%20Mask.md)
-      * [Conditional](Battles/Action%20Sequences/Elements/Conditional.md)
-      * [Loop](Battles/Action%20Sequences/Elements/Loop.md)
-      * [Relative Movement](Battles/Action%20Sequences/Elements/Relative%20Movement.md)
-      * [Relative Offset Movement](Battles/Action%20Sequences/Elements/Relative%20Offset%20Movement.md)
-      * [Result](Battles/Action%20Sequences/Elements/Result.md)
-      * [Result Modifier](Battles/Action%20Sequences/Elements/Result%20Modifier.md)
-      * [Scale](Battles/Action%20Sequences/Elements/Scale.md)
-      * [Sound Effect](Battles/Action%20Sequences/Elements/Sound%20Effect.md)
-      * [Switch](Battles/Action%20Sequences/Elements/Switch.md)
-      * [Variable](Battles/Action%20Sequences/Elements/Variable.md)
-      * [Virtual Key](Battles/Action%20Sequences/Elements/Virtual%20Key.md)
-      * [Visibility](Battles/Action%20Sequences/Elements/Visibility.md)
-      * [Wait](Battles/Action%20Sequences/Elements/Wait.md)
-    * [Action Sequence Result](Battles/Action%20Sequences/Action%20Sequence%20Result.md)
-  * [Battle Action Results](Battles/Battle%20Action%20Results.md)
-  * [Battle Conditions](Battles/Battle%20Conditions.md)
-  * **Programs**
-    * [Add Enemy](Battles/Programs/Add%20Enemy.md)
-    * [Alter Statistic](Battles/Programs/Alter%20Statistic.md)
-    * [Alter Status Effect](Battles/Programs/Alter%20Status%20Effect.md)
-    * [Battle Log](Battles/Programs/Battle%20Log.md)
-    * [Battle Table](Battles/Programs/Battle%20Table.md)
-    * [Clear Battle Log](Battles/Programs/Clear%20Battle%20Log.md)
-    * [Do Nothing](Battles/Programs/Do%20Nothing.md)
-    * [Global Switch](Battles/Programs/Global%20Switch.md)
-    * [Global Variable](Battles/Programs/Global%20Variable.md)
-    * [Replace Enemy](Battles/Programs/Replace%20Enemy.md)
-    * [Set Battle Pose](Battles/Programs/Set%20Battle%20Pose.md)
-    * [Use Skill](Battles/Programs/Use%20Skill.md)
-    * [Wait](Battles/Programs/Wait.md)
-  * [Battle Rewards](Battles/Battle%20Rewards.md)
-  * [Setup Sequences](Battles/Setup%20Sequences.md)
+      search: {
+        maxAge: 86400000,
+        paths: 'auto',
+        placeholder: 'Поиск по документации...',
+        noData: 'Ничего не найдено',
+        depth: 3
+      },
+
+      copyCode: {
+        buttonText: 'Копировать',
+        errorText: 'Ошибка',
+        successText: 'Скопировано'
+      },
+
+      // Плагин сборки правого TOC
+      plugins: [
+        function(hook, vm) {
+          hook.doneEach(function() {
+            const list = document.getElementById('right-toc-list');
+            const container = document.getElementById('right-toc');
+            if (!list || !container) return;
+            list.innerHTML = '';
+
+            const headers = document.querySelectorAll('.markdown-section h2, .markdown-section h3, .markdown-section h4');
+            if (headers.length === 0) {
+              container.style.display = 'none';
+              return;
+            } else {
+              if (window.innerWidth > 1200) container.style.display = 'block';
+            }
+
+            headers.forEach(h => {
+              const id = h.getAttribute('id');
+              const text = h.innerText.replace(/^[#\s]+/, '').replace(/¶$/, '').trim();
+              if (!id || !text) return;
+
+              const li = document.createElement('li');
+              li.className = 'toc-' + h.tagName.toLowerCase();
+
+              const a = document.createElement('a');
+              a.href = '#' + vm.route.path + '?id=' + encodeURIComponent(id);
+              a.innerText = text;
+
+              a.addEventListener('click', e => {
+                e.preventDefault();
+                h.scrollIntoView({ behavior: 'smooth' });
+                history.pushState(null, null, '#' + vm.route.path + '?id=' + encodeURIComponent(id));
+              });
+
+              li.appendChild(a);
+              list.appendChild(li);
+            });
+          });
+        }
+      ]
+    }
+  </script>
+
+  <!-- Docsify Core -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+
+  <!-- Плагины -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+</body>
+</html>
